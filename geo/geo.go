@@ -19,7 +19,7 @@ type GeoData struct {
 func GetMyLocation(city string) (*GeoData, error) {
 	if city != "" {
 		if !checkCity(city) {
-			panic("Такого города нет")
+			return nil, fmt.Errorf("NO CITY")
 		}
 		return &GeoData{
 			City: city,
